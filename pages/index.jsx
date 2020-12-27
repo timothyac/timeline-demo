@@ -4,14 +4,13 @@ import styled from "styled-components";
 const TimelineStyled = styled.div`
   max-width: 600px;
   margin: auto;
-  margin-top: 48px;
-  padding: 0 24px;
+  padding: 6px 24px;
 `;
 
 const TimelineHeaderStyled = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 
   h3 {
     white-space: nowrap;
