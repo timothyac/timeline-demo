@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# timeline-demo
 
-## Getting Started
+> Demostration of how to create a github-like timeline.
 
-First, run the development server:
+## What is it
+
+I'm a big fan of the github timeline on a user's profile page, so I thought I would re-create it. This project uses next.js & styled-components both implemented in just plan javascript. Feel free to clone and do whatever you like.
+
+## Development
+
+Built with [next](https://nextjs.org/docs/getting-started). You'll need [node.js](http://nodejs.org/) & [yarn](https://yarnpkg.com/).
 
 ```bash
-npm run dev
-# or
-yarn dev
+# clone repo
+git clone https://github.com/SunstroUS/timeline-demo.git
+
+# install dependencies
+yarn install
+
+# start app on port 3000
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<a href="/LICENSE.md">MIT</a>
