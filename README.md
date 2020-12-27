@@ -2,6 +2,8 @@
 
 > Demostration of how to create a github-like timeline.
 
+[Live Demo](https://timeline-demo.vercel.app)
+
 ## What is it
 
 I'm a big fan of the github timeline on a user's profile page, so I thought I would re-create it. This project uses next.js & styled-components both implemented in just plan javascript. Feel free to clone and do whatever you like.
