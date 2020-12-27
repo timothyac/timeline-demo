@@ -151,14 +151,22 @@ function TimelineItem(props) {
   );
 }
 
+function Timeline(props) {
+  const { timeline } = props;
+
+  return (
+    <TimelineStyled>
+      <TimelineHeader header={timeline.header} />
+      {timeline.posts.map((post) => post.show && <TimelineItem {...post} />)}
+    </TimelineStyled>
+  );
+}
+
 export default function Home() {
   return (
     <main>
       <h1>Timeline-Demo</h1>
-      <TimelineStyled>
-        <TimelineHeader header={DATA[0].header} />
-        {DATA[0].posts.map((post) => post.show && <TimelineItem {...post} />)}
-      </TimelineStyled>
+      <Timeline timeline={DATA[0]} />
     </main>
   );
 }
