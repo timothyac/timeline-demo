@@ -4,7 +4,7 @@ const TimelineStyled = styled.div`
   max-width: 600px;
   margin: auto;
   margin-top: 48px;
-  padding: 24px;
+  padding: 0 24px;
 `;
 
 const TimelineHeaderStyled = styled.div`
@@ -67,6 +67,37 @@ const TimelineItemStyled = styled.div`
   }
 `;
 
+const DATA = [
+  {
+    title: "Top of the timeline",
+    date: "December 26th, 2020",
+    preview: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    Consectetur impedit reprehenderit dicta suscipit sit beatae
+    repellendus, exercitationem, adipisci quo nulla atque mollitia.
+    Quas cum obcaecati quos quisquam magnam et eligendi.`,
+    icon: "pencil",
+    link: "blog/dead-link",
+  },
+];
+
+function TimelineItem(props) {
+  const { title, date, preview } = props;
+
+  return (
+    <TimelineItemStyled>
+      <div className="marker">
+        <div className="icon" />
+        <div className="line" />
+      </div>
+      <div className="content">
+        <h3>{title}</h3>
+        <span>{date}</span>
+        <p>{preview}</p>
+      </div>
+    </TimelineItemStyled>
+  );
+}
+
 export default function Home() {
   return (
     <div>
@@ -77,22 +108,7 @@ export default function Home() {
             <h3>December 2020</h3>
             <div className="line" />
           </TimelineHeaderStyled>
-          <TimelineItemStyled>
-            <div className="marker">
-              <div className="icon" />
-              <div className="line" />
-            </div>
-            <div className="content">
-              <h3>Top of the timeline</h3>
-              <span>December 26th, 2020</span>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Consectetur impedit reprehenderit dicta suscipit sit beatae
-                repellendus, exercitationem, adipisci quo nulla atque mollitia.
-                Quas cum obcaecati quos quisquam magnam et eligendi.
-              </p>
-            </div>
-          </TimelineItemStyled>
+          <TimelineItem {...DATA[0]} />
         </TimelineStyled>
       </main>
     </div>
