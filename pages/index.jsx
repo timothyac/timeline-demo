@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const TimelineStyled = styled.div`
@@ -26,7 +27,7 @@ const TimelineHeaderStyled = styled.div`
 
 const TimelineItemStyled = styled.div`
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 
   .marker {
     display: flex;
@@ -44,7 +45,7 @@ const TimelineItemStyled = styled.div`
       width: 1px;
       height: 100%;
       background-color: #000;
-      margin-bottom: -24px;
+      margin-bottom: -18px;
     }
   }
 
@@ -63,6 +64,16 @@ const TimelineItemStyled = styled.div`
 
     p {
       color: #777;
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: #2f70e9;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #4b2fe9;
+      }
     }
   }
 `;
@@ -93,6 +104,7 @@ function TimelineItem(props) {
         <h3>{title}</h3>
         <span>{date}</span>
         <p>{preview}</p>
+        <Link href={props.link}>Read More →</Link>
       </div>
     </TimelineItemStyled>
   );
