@@ -27,7 +27,7 @@ const TimelineHeaderStyled = styled.div`
 
 const TimelineItemStyled = styled.div`
   display: flex;
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
 
   .marker {
     display: flex;
@@ -35,9 +35,9 @@ const TimelineItemStyled = styled.div`
     align-items: center;
 
     .icon {
-      min-height: 30px;
-      width: 30px;
-      border-radius: 30px;
+      min-height: 12px;
+      width: 12px;
+      border-radius: 12px;
       background-color: #333;
     }
 
@@ -45,12 +45,16 @@ const TimelineItemStyled = styled.div`
       width: 1px;
       height: 100%;
       background-color: #000;
-      margin-bottom: -18px;
+
+      &:first-child {
+        height: 8px;
+      }
     }
   }
 
   .content {
     margin-left: 16px;
+    margin-bottom: 18px;
 
     h3 {
       margin-bottom: 4px;
@@ -80,16 +84,52 @@ const TimelineItemStyled = styled.div`
 
 const DATA = [
   {
-    title: "Top of the timeline",
-    date: "December 26th, 2020",
-    preview: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Consectetur impedit reprehenderit dicta suscipit sit beatae
-    repellendus, exercitationem, adipisci quo nulla atque mollitia.
-    Quas cum obcaecati quos quisquam magnam et eligendi.`,
-    icon: "pencil",
-    link: "blog/dead-link",
+    header: "December 2020",
+    posts: [
+      {
+        title: "Top of the timeline",
+        date: "December 26th, 2020",
+        preview: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Consectetur impedit reprehenderit dicta suscipit sit beatae
+        repellendus, exercitationem, adipisci quo nulla atque mollitia.
+        Quas cum obcaecati quos quisquam magnam et eligendi.`,
+        link: "blog/dead-link",
+        show: true,
+      },
+      {
+        title: "Second in the timeline",
+        date: "December 26th, 2020",
+        preview: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Quas cum obcaecati quos quisquam magnam et eligendi.`,
+        link: "blog/dead-link",
+        show: true,
+      },
+      {
+        title: "Third in the timeline",
+        date: "December 26th, 2020",
+        preview: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Consectetur impedit reprehenderit dicta suscipit sit beatae
+        repellendus, exercitationem, adipisci quo nulla atque mollitia.
+        Quas cum obcaecati quos quisquam magnam et eligendi. Lorem ipsum dolor, 
+        sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet 
+        consectetur adipisicing elit.`,
+        link: "blog/dead-link",
+        show: true,
+      },
+    ],
   },
 ];
+
+function TimelineHeader(props) {
+  const { header } = props;
+
+  return (
+    <TimelineHeaderStyled>
+      <h3>{header}</h3>
+      <div className="line" />
+    </TimelineHeaderStyled>
+  );
+}
 
 function TimelineItem(props) {
   const { title, date, preview } = props;
@@ -97,6 +137,7 @@ function TimelineItem(props) {
   return (
     <TimelineItemStyled>
       <div className="marker">
+        <div className="line" />
         <div className="icon" />
         <div className="line" />
       </div>
@@ -112,17 +153,12 @@ function TimelineItem(props) {
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <h1>Timeline-Demo</h1>
-        <TimelineStyled>
-          <TimelineHeaderStyled>
-            <h3>December 2020</h3>
-            <div className="line" />
-          </TimelineHeaderStyled>
-          <TimelineItem {...DATA[0]} />
-        </TimelineStyled>
-      </main>
-    </div>
+    <main>
+      <h1>Timeline-Demo</h1>
+      <TimelineStyled>
+        <TimelineHeader header={DATA[0].header} />
+        {DATA[0].posts.map((post) => post.show && <TimelineItem {...post} />)}
+      </TimelineStyled>
+    </main>
   );
 }
