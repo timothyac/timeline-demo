@@ -4,6 +4,24 @@ const TimelineStyled = styled.div`
   max-width: 600px;
   margin: auto;
   margin-top: 48px;
+  padding: 24px;
+`;
+
+const TimelineHeaderStyled = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+
+  h3 {
+    white-space: nowrap;
+  }
+
+  .line {
+    margin-left: 8px;
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+  }
 `;
 
 const TimelineItemStyled = styled.div`
@@ -32,6 +50,20 @@ const TimelineItemStyled = styled.div`
 
   .content {
     margin-left: 16px;
+
+    h3 {
+      margin-bottom: 4px;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 4px;
+      color: #444;
+    }
+
+    p {
+      color: #777;
+    }
   }
 `;
 
@@ -41,6 +73,10 @@ export default function Home() {
       <main>
         <h1>Timeline-Demo</h1>
         <TimelineStyled>
+          <TimelineHeaderStyled>
+            <h3>December 2020</h3>
+            <div className="line" />
+          </TimelineHeaderStyled>
           <TimelineItemStyled>
             <div className="marker">
               <div className="icon" />
@@ -54,20 +90,6 @@ export default function Home() {
                 Consectetur impedit reprehenderit dicta suscipit sit beatae
                 repellendus, exercitationem, adipisci quo nulla atque mollitia.
                 Quas cum obcaecati quos quisquam magnam et eligendi.
-              </p>
-            </div>
-          </TimelineItemStyled>
-          <TimelineItemStyled>
-            <div className="marker">
-              <div className="icon" />
-              <div className="line" />
-            </div>
-            <div className="content">
-              <h3>Second in the timeline</h3>
-              <span>December 24th, 2020</span>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                libero porro debitis. Pariatur illo sunt nobis provident rerum
               </p>
             </div>
           </TimelineItemStyled>
